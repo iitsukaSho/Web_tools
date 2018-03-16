@@ -42,6 +42,23 @@ main
       font-weight: bold
       margin-top: 30px
     .info
+      p
+        font-size: 12px
+        margin-top: 4px
+        padding: 7px
+        &.description
+          strong
+            display: inline
+          span
+            background-color: #bcf
+            border: solid 1px #abf
+            display: inline-block
+            padding: 0.5px 2px
+            border-radius: 2px
+            margin: 0 2px
+            &.required
+              background-color: #fbb
+              border: solid 1px #faa
       strong
         margin-top: 20px
         padding: 5px 0px 10px
@@ -60,12 +77,15 @@ main
           font-size: 11px
           line-height: 1.5
           span
-            background-color: #fbb
-            border: solid 1px #faa
+            background-color: #bcf
+            border: solid 1px #abf
             display: inline-block
             padding: 0.5px 2px
             border-radius: 2px
             margin: 0 2px
+            &.required
+              background-color: #fbb
+              border: solid 1px #faa
 footer
   border-top: solid 1px #ccc
   background-color: #fff

@@ -125,7 +125,7 @@ function affilibanner_generate() {
 //子フレームから高さ情報を取得
 window.addEventListener('message', function(affiliframe) {
   if(affiliframe.data.p == 'VdKChsfG'){
-  document.getElementById('da_affili_banner-widget'+affiliframe.data.i).height = affiliframe.data.h;
+    document.getElementById('da_affili_banner-widget'+affiliframe.data.i).height = affiliframe.data.h;
   };
 }, false);
 
