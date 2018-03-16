@@ -142,17 +142,21 @@
     <h2>バナーソースコード</h2>
     <div class="info">
       <strong>HTML</strong>
+      <p class="description">
+        <span>任意</span> あってもなくてもいい。ない場合の記述は、「<strong>何も書かない</strong>」か、「<strong>data-price=""</strong>」で指定。<br>
+        <span class="required">必須</span> ないと表示崩れが起きるし、JSが読み込まれなかった時のミニマムな&lt;a&gt;タグも実現できない
+      </p>
       <code>
 <pre class="code">
   &lt;a class="da_affili_banner"
-   href="<span>store.DroneAgentの商品URLを入れる</span>"
-   data-image="<span>商品画像のURLを入れる</span>"
+   href="<span class="required">store.DroneAgentの商品URLを入れる</span>"
+   data-image="<span class="required">商品画像のURLを入れる</span>"
    data-price="<span>商品の金額を入れる</span>"
    data-url_amazon="<span>Amazonの商品URLを入れる</span>"
    data-url_rakuten="<span>楽天市場の商品URLを入れる</span>"
    data-url_yahooshop="<span>yahoo!ショッピングの商品URLを入れる</span>"
   &gt;
-  <span>商品名を記述します</span>
+  <span class="required">商品名を記述します</span>
   &lt;/a&gt;
   &lt;script src="https://flightsinc.jp/cdn/da-affiliatebanner-0.0.js"&gt;&lt;/script&gt;
 </pre>
@@ -161,40 +165,40 @@
       <code>
 <pre class="code">
   &lt;a class="da_affili_banner"
-   href="<span>store.DroneAgentの商品URLを入れる</span>"
-   data-image="<span>商品画像のURLを入れる</span>"
+   href="<span class="required">store.DroneAgentの商品URLを入れる</span>"
+   data-image="<span class="required">商品画像のURLを入れる</span>"
    data-price="<span>商品の金額を入れる</span>"
    data-url_amazon="<span>Amazonの商品URLを入れる</span>"
    data-url_rakuten="<span>楽天市場の商品URLを入れる</span>"
    data-url_yahooshop="<span>yahoo!ショッピングの商品URLを入れる</span>"
   &gt;
-  <span>商品名を記述します</span>
+  <span class="required">商品名を記述します</span>
   &lt;/a&gt;
 
   〜 略 〜
 
   &lt;a class="da_affili_banner"
-   href="<span>store.DroneAgentの商品URLを入れる</span>"
-   data-image="<span>商品画像のURLを入れる</span>"
+   href="<span class="required">store.DroneAgentの商品URLを入れる</span>"
+   data-image="<span class="required">商品画像のURLを入れる</span>"
    data-price="<span>商品の金額を入れる</span>"
    data-url_amazon="<span>Amazonの商品URLを入れる</span>"
    data-url_rakuten="<span>楽天市場の商品URLを入れる</span>"
    data-url_yahooshop="<span>yahoo!ショッピングの商品URLを入れる</span>"
   &gt;
-  <span>商品名を記述します</span>
+  <span class="required">商品名を記述します</span>
   &lt;/a&gt;
 
   〜 略 〜
 
   &lt;a class="da_affili_banner"
-   href="<span>store.DroneAgentの商品URLを入れる</span>"
-   data-image="<span>商品画像のURLを入れる</span>"
+   href="<span class="required">store.DroneAgentの商品URLを入れる</span>"
+   data-image="<span class="required">商品画像のURLを入れる</span>"
    data-price="<span>商品の金額を入れる</span>"
    data-url_amazon="<span>Amazonの商品URLを入れる</span>"
    data-url_rakuten="<span>楽天市場の商品URLを入れる</span>"
    data-url_yahooshop="<span>yahoo!ショッピングの商品URLを入れる</span>"
   &gt;
-  <span>商品名を記述します</span>
+  <span class="required">商品名を記述します</span>
   &lt;/a&gt;
 
   〜 略 〜
