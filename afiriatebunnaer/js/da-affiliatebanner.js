@@ -88,6 +88,7 @@ function affilibanner_generate() {
 	function sendHeight(){
 		var id = [affriatebannerloopid];
 		var height = document.documentElement.scrollHeight;
+		var password = 'VdKChsfG';
 		var data = {i:id,h:height};
 		parent.postMessage(data, "*");
 	}
@@ -102,13 +103,9 @@ function affilibanner_generate() {
 }
 //子フレームから高さ情報を取得
 window.addEventListener('message', function(affiliframe) {
-	console.log("１つめ i:"+'da_affili_banner-widget'+affiliframe.data.i+"  ２つめ h:"+affiliframe.data.h)
-	// if(affiliframe.origin=="http://localhost"){
-		if(!affiliframe.data){
-			affiliframe.data = '396';
-		}
+	if(affiliframe.data.p == 'VdKChsfG'){
 		document.getElementById('da_affili_banner-widget'+affiliframe.data.i).height = affiliframe.data.h;
-	// }
+	};
 }, false);
 
 })();
