@@ -7,18 +7,54 @@ for(i=0;i<atag.length;i++){
 function affilibanner_generate() {
   // 目印のaタグからパラメータとってきたら消す
   var atag = document.getElementsByClassName('da_affili_banner');
+  // 目印のaタグに番号をつけて変数に格納
   var affriatebannerloopid = i;
+  // 目印のaタグのパラメーター取得して変数に格納
   var product_name = atag[i].text;;
   var product_image = atag[i].dataset.image;
   var product_price = atag[i].dataset.price;
   if(!product_price==""){
   var product_price = '<p class="price">'+product_price+'<span>円 (税込)</span></p>'
-  }
+}else{
+  var product_price = "";
+};
   var product_url_da = atag[i].href;
   var product_url_am = atag[i].dataset.url_amazon;
+  if(!product_url_am==""){
+    var product_url_am = function(){/*
+<li>
+            <a href="[product_url_am]" class="da_affili_link_amazon" target="_top">
+              <span class="da_affili_icon_amazon"></span>
+              Amazonで購入
+            </a>
+          </li>*/}.toString().replace(/\[product_url_am\]/g, product_url_am).split("\n").slice(1,-1).join("\n");
+  }else{
+  var product_url_am = "";
+  };
   var product_url_ra = atag[i].dataset.url_rakuten;
+  if(!product_url_ra==""){
+    var product_url_ra = function(){/*
+<li>
+            <a href="[product_url_ra]" class="da_affili_link_rakuten" target="_top">
+              <span class="da_affili_icon_rakuten"></span>
+              楽天市場で購入
+            </a>
+          </li>*/}.toString().replace(/\[product_url_ra\]/g, product_url_ra).split("\n").slice(1,-1).join("\n");
+  }else{
+  var product_url_ra = "";
+  };
   var product_url_ya = atag[i].dataset.url_yahooshop;
-
+  if(!product_url_ya==""){
+    var product_url_ya = function(){/*
+<li>
+            <a href="[product_url_ya]" class="da_affili_link_yahoo" target="_top">
+              <span class="da_affili_icon_yahoo"></span>
+              Yahoo!ショッピングで購入
+            </a>
+          </li>*/}.toString().replace(/\[product_url_ya\]/g, product_url_ya).split("\n").slice(1,-1).join("\n");
+  }else{
+  var product_url_ya = "";
+  };
   atag[i].style.display = 'none';
 
   var iframe = document.createElement('iframe');
@@ -36,45 +72,30 @@ function affilibanner_generate() {
   var widget = '';
   widget += (function(){/*
   <div class="da_affili_banner">
-  <div class="da_affili_img">
-  <a href="[product_url_da]" class="trim" target="_top">
-  <img src="[product_image]" alt="商品画像">
-  [product_price]
-  </a>
-  </div>
-  <div class="da_affili_product_info">
-  <div class="da_affili_productname">
-  <a href="[product_url_da]" target="_top">[product_name]</a>
-  </div>
-  <div class="da_affili_buttonarea">
-  <ul>
-  <li>
-  <a href="[product_url_da]" class="da_affili_link_da" target="_top">
-  <span class="da_affili_icon_da"></span>
-  DroneAgentで購入
-  </a>
-  </li>
-  <li>
-  <a href="[product_url_am]" class="da_affili_link_amazon" target="_top">
-  <span class="da_affili_icon_amazon"></span>
-  Amazonで購入
-  </a>
-  </li>
-  <li>
-  <a href="[product_url_ra]" class="da_affili_link_rakuten" target="_top">
-  <span class="da_affili_icon_rakuten"></span>
-  楽天市場で購入
-  </a>
-  </li>
-  <li>
-  <a href="[product_url_ya]" class="da_affili_link_yahoo" target="_top">
-  <span class="da_affili_icon_yahoo"></span>
-  Yahoo!ショッピングで購入
-  </a>
-  </li>
-  </ul>
-  </div>
-  </div>
+    <div class="da_affili_img">
+      <a href="[product_url_da]" class="trim" target="_top">
+        <img src="[product_image]" alt="商品画像">
+        [product_price]
+      </a>
+    </div>
+    <div class="da_affili_product_info">
+      <div class="da_affili_productname">
+        <a href="[product_url_da]" target="_top">[product_name]</a>
+      </div>
+      <div class="da_affili_buttonarea">
+        <ul>
+          <li>
+            <a href="[product_url_da]" class="da_affili_link_da" target="_top">
+              <span class="da_affili_icon_da"></span>
+              DroneAgentで購入
+            </a>
+          </li>
+          [product_url_am]
+          [product_url_ra]
+          [product_url_ya]
+        </ul>
+      </div>
+    </div>
   </div>
 
   <style>
@@ -86,11 +107,11 @@ function affilibanner_generate() {
   sendHeight();
 
   function sendHeight(){
-  var id = [affriatebannerloopid];
-  var height = document.documentElement.scrollHeight;
-  var password = 'VdKChsfG';
-  var data = {i:id,h:height};
-  parent.postMessage(data, "*");
+    var id = [affriatebannerloopid];
+    var height = document.documentElement.scrollHeight;
+    var password = 'VdKChsfG';
+    var data = {i:id,h:height,p:password};
+    parent.postMessage(data, "*");
   }
   </script>
   */}).toString().replace(/(\n)/g, '').replace(/\[product_image\]/g, product_image).replace(/\[product_price\]/g, product_price).replace(/\[product_name\]/g, product_name).replace(/\[product_url_da\]/g, product_url_da).replace(/\[product_url_am\]/g, product_url_am).replace(/\[product_url_ra\]/g, product_url_ra).replace(/\[product_url_ya\]/g, product_url_ya).replace(/\[affriatebannerloopid\]/g, affriatebannerloopid).split('/*')[1].split('*/')[0];
