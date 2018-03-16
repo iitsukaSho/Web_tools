@@ -1,29 +1,29 @@
 /* 画像のトリミング
-	横幅に合わせて画像を伸縮し、縦幅が横幅を超える場合はカット、超えない場合は上下中央寄せにする
+  横幅に合わせて画像を伸縮し、縦幅が横幅を超える場合はカット、超えない場合は上下中央寄せにする
 =imgtrim
-	position: relative
-	overflow: hidden
-	background-color: inherit
-	&::before
-		content: ''
-		display: block
-		padding-top: 100%
-	img
-		position: absolute
-		width: 100%
-		height: auto
-		margin: auto
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
+  position: relative
+  overflow: hidden
+  background-color: inherit
+  &::before
+    content: ''
+    display: block
+    padding-top: 100%
+  img
+    position: absolute
+    width: 100%
+    height: auto
+    margin: auto
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
 
 /* １行テキストの左にアイコン
 =icon1l
-	-webkit-background-size: contain
-	background-size: contain
-	position: absolute
-	left: 5px
-	top: 0
-	bottom: 0
-	margin: auto
+  -webkit-background-size: contain
+  background-size: contain
+  position: absolute
+  left: 5px
+  top: 0
+  bottom: 0
+  margin: auto
